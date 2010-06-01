@@ -1,0 +1,24 @@
+OVERVIEW
+========
+This is a hacked version of Tim Gipson's awesome mid2cnc code to support the MakerBot Cupcake CNC 3D printer.
+mid2cnc requies a MIDI file, and I've found that this workflow is effective on OS X:
+
+1. Obtain the song you want as a PowerTab guitar tablature file. Search for .ptb files using your favorite search engine
+2. Use TabView or other application to convert tablature file to MIDI file
+3. Use midi2cnc to convert MIDI file to gcode file.
+
+USAGE
+=====
+python ./mid2cnc.py midifile gcodefile ppi
+Example:
+python ./mid2cnc.py ../man_on_the_silver_mountain/man_on_the_silver_mountain.mid ../man_on_the_silver_mountain/man_on_the_silver_mountain.gcode 800
+
+RESOURCES
+=========
+mid2cnc - http://tim.cexx.org/?p=633
+PowerTab files - http://www.ultimate-guitar.com/tabs/
+Also read the mid2cnc_readme.txt file
+
+THANKS
+======
+Thanks to Slowhand (http://www.instantpowertabs.de.vu) for the "Man On The Silver Mountain" source PowerTab file, and T. R. Gipson (drmn4ea at google mail) for the awesome mid2cnc code.
