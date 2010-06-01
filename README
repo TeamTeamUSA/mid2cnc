@@ -5,7 +5,7 @@ mid2cnc requies a MIDI file, and I've found that this workflow is effective on O
 
 1. Obtain the song you want as a PowerTab guitar tablature file. Search for .ptb files using your favorite search engine
 2. Use TabView or other application to convert tablature file to MIDI file
-3. Use midi2cnc to convert MIDI file to gcode file.
+3. Use mid2cnc to convert MIDI file to gcode file.
 
 USAGE
 =====
@@ -15,9 +15,10 @@ python ./mid2cnc.py ../man_on_the_silver_mountain/man_on_the_silver_mountain.mid
 
 RESOURCES
 =========
-mid2cnc - http://tim.cexx.org/?p=633
+mid2cnc - http://tim.cexx.org/?p=633 (Also read the mid2cnc_readme.txt file)
 PowerTab files - http://www.ultimate-guitar.com/tabs/
-Also read the mid2cnc_readme.txt file
+MakerBot Music group - http://groups.google.com/group/makerbotmusic
+MakerBot Music - http://wiki.makerbot.com/makerbot-music
 
 THANKS
 ======
