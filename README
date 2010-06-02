@@ -1,17 +1,20 @@
 OVERVIEW
 ========
-This is a hacked version of Tim Gipson's awesome mid2cnc code to support the MakerBot Cupcake CNC 3D printer.
-mid2cnc requies a MIDI file, and I've found that this workflow is effective on OS X:
+This is a hacked version of Tim Gipson's awesome mid2cnc code to support the MakerBot Cupcake CNC 3D printer. The gcode file will voice the song in the Z axis only.
+mid2cnc requies a MIDI file, and I've found that this workflow is effective on OS X 10.5.8, YMMV:
 
-1. Obtain the song you want as a PowerTab guitar tablature file. Search for .ptb files using your favorite search engine
-2. Use TabView or other application to convert tablature file to MIDI file
+1. Obtain the song you want as a PowerTab guitar tablature file. Search for .ptb or gp4 files using your favorite search engine
+2. Use Tablatures or other application to convert tablature file to MIDI file
 3. Use mid2cnc to convert MIDI file to gcode file.
 
-USAGE
-=====
+INSTRUCTIONS
+============
+Usage:
 python ./mid2cnc.py midifile gcodefile ppi
 Example:
 python ./mid2cnc.py ../man_on_the_silver_mountain/man_on_the_silver_mountain.mid ../man_on_the_silver_mountain/man_on_the_silver_mountain.gcode 800
+
+You may have to experiment with the ppi value to get the song right; 600 is a good place to start. Larger numbers make the pitch lower and the song slower.
 
 RESOURCES
 =========
@@ -22,4 +25,6 @@ MakerBot Music - http://wiki.makerbot.com/makerbot-music
 
 THANKS
 ======
-Thanks to Slowhand (http://www.instantpowertabs.de.vu) for the "Man On The Silver Mountain" source PowerTab file, and T. R. Gipson (drmn4ea at google mail) for the awesome mid2cnc code.
+Slowhand (http://www.instantpowertabs.de.vu) for the "Man On The Silver Mountain" source PowerTab file
+Aladin for the "Tour de France" source guitar tab file
+And last, but not least, T. R. Gipson (drmn4ea at google mail) for the awesome mid2cnc code on which to hack.
