@@ -11,7 +11,7 @@
 # Usage:
 # python ./mid2cnc.py midifile gcodefile ppi
 # Example:
-# python ./mid2cnc.py ../man_on_the_silver_mountain/man_on_the_silver_mountain.mid ../man_on_the_silver_mountain/man_on_the_silver_mountain.gcode 800
+# python ./mid2cnc.py ../man_on_the_silver_mountain/man_on_the_silver_mountain.mid ../man_on_the_silver_mountain/man_on_the_silver_mountain.gcode 600
 
 import sys
 import midiparser
@@ -32,8 +32,8 @@ num_axes = 3
 
 suppress_comments = 0 # Set to 1 if your machine controller does not handle ( comments )
 
-tempo=None # should be set by your MIDI...
-#tempo=112 # should be set by your MIDI...
+#tempo=None # should be set by your MIDI...
+tempo=138 # should be set by your MIDI...
 
 metric = 'yes' # set to 'no' for Imperial units
 
@@ -49,10 +49,10 @@ def main(argv):
 
     if is_cupcake == 'yes':
         num_axes = 1 # for Cupcakes it should be 1; all others should be 3
-        machine_ppi = float(argv[3])  # Higher numbers make the pitch lower; 600 is a good starting place for Cupcakes
+        machine_ppi = float(argv[3])  # Higher numbers make the pitch lower and the song slower; 600 is a good starting place for Cupcakes
         machine_limit_x = 3.93 # 
         machine_limit_y = 3.93 # 
-        machine_limit_z = 5 # 
+        machine_limit_z = 1 # 
 		
     midifile = argv[1]
     outfile = argv[2]
@@ -123,6 +123,9 @@ def main(argv):
         FILE.write ("G21\n")            # Set units to Metric
     else:
         FILE.write ("G20\n")            # Set units to Imperial
+
+    if is_cupcake == 'yes':
+        FILE.write ("G90\n")            # Set movements relative
 	
     FILE.write("G00 X0 Y0 Z0\n")    # Home
 
